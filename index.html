@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARagrisystems | Decentralized Eco-Infrastructure</title>
+    <style>
+        :root {
+            --bg-color: #12161a;
+            --text-color: #e2e8f0;
+            --accent-color: #4ade80;
+            --card-bg: #1e252b;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 1px solid #2d3748;
+        }
+        h1 {
+            color: var(--accent-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .badge {
+            display: inline-block;
+            background: #2a4365;
+            color: #90cdf4;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        p {
+            line-height: 1.6;
+            color: #a0aec0;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            font-weight: bold;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: transform 0.2s, background-color 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background-color: #2ecc71;
+            transform: translateY(-2px);
+        }
+        /* --- PROPRIETARY MODAL WARNING SYSTEM --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-box {
+            background: #2d3748;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 450px;
+            text-align: left;
+            border: 2px solid #e53e3e;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .modal-box h3 {
+            color: #fc8181;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .modal-box p {
+            font-size: 0.95rem;
+            color: #cbd5e0;
+        }
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .btn-cancel {
+            background: #4a5568;
+            color: #edf2f7;
+        }
+        .btn-proceed {
+            background: #e53e3e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JARagrisystems</h1>
+        <div class="badge">U.S. PATENT PENDING</div>
+        <p>Bridging bio-mechanical infrastructure with decentralized mutual aid networks. Engineering screen-free, asset-isolated micro-agriculture systems optimized for universal local resilience.</p>
+        
+        <!-- Intercept button action to trigger security gate logic -->
+        <button class="btn" onclick="triggerOutboundGate()">Access Master Portal Network</button>
+    </div>
+
+    <!-- Security Network Boundary Outbound Warning Overlay (Claim 3) -->
+    <div class="modal-overlay" id="securityGate">
+        <div class="modal-box">
+            <h3>⚠️ SECURITY BOUNDARY ALERT</h3>
+            <p><strong>Warning:</strong> You are now leaving the secure non-profit platform network. Any transactions, data exposures, or integrations initiated beyond this point are strictly governed by the active signed Mutual NDA and the external provider's terms of service.</p>
+            <div class="modal-buttons">
+                <button class="btn btn-cancel" onclick="closeOutboundGate()">Abort</button>
+                <button class="btn btn-proceed" onclick="proceedToTarget()">Proceed</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const targetUrl = "https://jaragrisystems.com";
+
+        function triggerOutboundGate() {
+            document.getElementById('securityGate').classList.add('active');
+        }
+
+        function closeOutboundGate() {
+            document.getElementById('securityGate').classList.remove('active');
+        }
+
+        function proceedToTarget() {
+            window.location.href = targetUrl;
+        }
+    </script>
+</body>
+</html>
+
